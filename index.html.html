@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qiskit Fall Fest 2025 - University of Uyo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0a1e 0%, #1a0a2e 50%, #16213e 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 30, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-entangled {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+        }
+
+        .university-logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #228B22, #8B4513);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+            border: 2px solid #FFD700;
+            position: relative;
+            z-index: 2;
+        }
+
+        .entanglement-visual {
+            width: 60px;
+            height: 30px;
+            position: relative;
+            margin: 0 -10px;
+            z-index: 1;
+        }
+
+        .infinity-path {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 25px;
+            border: 3px solid transparent;
+            border-radius: 50px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493, #ff69b4) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: exclude;
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            animation: quantum-flow 3s ease-in-out infinite;
+        }
+
+        .qiskit-logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #6f42c1, #007bff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .brand-text {
+            color: #ff69b4;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: linear-gradient(45deg, #ff69b4, #6f42c1);
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(10, 10, 30, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 8px;
+            padding: 1rem 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 105, 180, 0.2);
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #ffffff;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .dropdown a:hover {
+            background: rgba(255, 105, 180, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: radial-gradient(circle at center, rgba(255, 105, 180, 0.1), transparent 70%);
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 1000px;
+            position: relative;
+        }
+
+        .centenary-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #007bff, #6f42c1);
+            padding: 0.5rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 20px rgba(0, 123, 255, 0.3);
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #ff69b4;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff69b4, #6f42c1, #007bff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbow-glow 3s ease-in-out infinite alternate;
+            text-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+        }
+
+        .hero-year {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero-dates {
+            background: rgba(255, 105, 180, 0.1);
+            border: 2px solid rgba(255, 105, 180, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .dates-title {
+            font-size: 1.3rem;
+            color: #ff69b4;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .dates-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .date-item {
+            background: rgba(111, 66, 193, 0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #ff69b4;
+        }
+
+        .date-day {
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        .date-date {
+            color: #ff69b4;
+            font-size: 0.9rem;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ff69b4, #6f42c1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid #ff69b4;
+        }
+
+        /* Quantum Background Elements */
+        .quantum-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .bloch-sphere {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 20%;
+            right: 10%;
+            opacity: 0.3;
+            animation: spin-3d 20s linear infinite;
+        }
+
+        .bloch-outline {
+            width: 100%;
+            height: 100%;
+            border: 2px solid #ff69b4;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .bloch-axis {
+            position: absolute;
+            background: #6f42c1;
+            opacity: 0.7;
+        }
+
+        .bloch-vertical {
+            width: 2px;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .bloch-horizontal {
+            width: 100%;
+            height: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .bloch-point {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #ff69b4;
+            border-radius: 50%;
+            top: 30%;
+            right: 40%;
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
+            animation: quantum-state 4s ease-in-out infinite;
+        }
+
+        .infinity-symbol {
+            position: absolute;
+            width: 150px;
+            height: 75px;
+            top: 60%;
+            left: 15%;
+            opacity: 0.4;
+            animation: float-infinity 8s ease-in-out infinite;
+        }
+
+        .infinity-path-bg {
+            width: 100%;
+            height: 100%;
+            border: 4px solid transparent;
+            border-radius: 75px;
+            background: linear-gradient(45deg, #ff69b4, #6f42c1, #007bff) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: exclude;
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+        }
+
+        .quantum-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .quantum-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ff69b4;
+            border-radius: 50%;
+            animation: float-particle 6s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
+        }
+
+        .quantum-particle:nth-child(odd) {
+            background: #6f42c1;
+            box-shadow: 0 0 10px rgba(111, 66, 193, 0.6);
+            animation-duration: 8s;
+        }
+
+        .quantum-particle:nth-child(1) { top: 20%; left: 10%; animation-delay: -2s; }
+        .quantum-particle:nth-child(2) { top: 80%; left: 20%; animation-delay: -4s; }
+        .quantum-particle:nth-child(3) { top: 40%; left: 80%; animation-delay: -1s; }
+        .quantum-particle:nth-child(4) { top: 60%; left: 70%; animation-delay: -3s; }
+        .quantum-particle:nth-child(5) { top: 10%; left: 60%; animation-delay: -5s; }
+
+        /* Main Content */
+        .main-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .section {
+            padding: 4rem 0;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #ff69b4;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(45deg, #ff69b4, #6f42c1);
+            border-radius: 2px;
+        }
+
+        .about-content {
+            background: rgba(255, 105, 180, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255, 105, 180, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .centenary-highlight {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(111, 66, 193, 0.1));
+            border-radius: 20px;
+            border: 2px solid rgba(0, 123, 255, 0.3);
+        }
+
+        .centenary-number {
+            font-size: 6rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #007bff, #6f42c1);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .centenary-text {
+            font-size: 1.5rem;
+            color: #ffffff;
+            background: #000000;
+            display: inline-block;
+            padding: 0.5rem 2rem;
+            border-radius: 50px;
+            margin-top: -2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e2e8f0;
+        }
+
+        /* Schedule Section */
+        .schedule-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .schedule-item {
+            background: rgba(255, 105, 180, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 4px solid #ff69b4;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 105, 180, 0.2);
+        }
+
+        .schedule-item:hover {
+            transform: translateX(10px);
+            background: rgba(255, 105, 180, 0.2);
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+        }
+
+        .schedule-week {
+            color: #ff69b4;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .schedule-date {
+            color: #6f42c1;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+
+        .schedule-title {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin: 0.5rem 0;
+        }
+
+        .schedule-description {
+            color: #e2e8f0;
+        }
+
+        /* Partners Section */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .partner-card {
+            background: rgba(255, 105, 180, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 105, 180, 0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.2);
+        }
+
+        .partner-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .uniuyo-logo {
+            background: linear-gradient(45deg, #228B22, #8B4513);
+            border: 3px solid #FFD700;
+        }
+
+        .qiskit-partner-logo {
+            background: linear-gradient(45deg, #6f42c1, #007bff);
+        }
+
+        .quantum-logo {
+            background: linear-gradient(45deg, #ff69b4, #6f42c1);
+        }
+
+        .partner-name {
+            font-size: 1.5rem;
+            color: #ff69b4;
+            margin-bottom: 1rem;
+        }
+
+        .partner-description {
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        /* Registration Section */
+        .registration-form {
+            background: rgba(255, 105, 180, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid rgba(255, 105, 180, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ff69b4;
+            font-weight: bold;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(255, 105, 180, 0.3);
+            border-radius: 10px;
+            background: rgba(10, 10, 30, 0.5);
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #ff69b4;
+            box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.1);
+        }
+
+        .form-button {
+            background: linear-gradient(45deg, #ff69b4, #6f42c1);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .form-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(10, 10, 30, 0.8);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 105, 180, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .university-info {
+            margin-bottom: 2rem;
+        }
+
+        .university-name {
+            font-size: 1.5rem;
+            color: #ff69b4;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            color: #e2e8f0;
+            margin-bottom: 1rem;
+        }
+
+        /* Animations */
+        @keyframes quantum-flow {
+            0%, 100% {
+                transform: translate(-50%, -50%) rotate(0deg) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) rotate(180deg) scale(1.1);
+            }
+        }
+
+        @keyframes rainbow-glow {
+            0% {
+                filter: hue-rotate(0deg) brightness(1.2);
+                text-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+            }
+            33% {
+                filter: hue-rotate(120deg) brightness(1.4);
+                text-shadow: 0 0 40px rgba(111, 66, 193, 0.6);
+            }
+            66% {
+                filter: hue-rotate(240deg) brightness(1.3);
+                text-shadow: 0 0 35px rgba(0, 123, 255, 0.5);
+            }
+            100% {
+                filter: hue-rotate(360deg) brightness(1.2);
+                text-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+            }
+        }
+
+        @keyframes pulse-glow {
+            from {
+                box-shadow: 0 5px 20px rgba(0, 123, 255, 0.3);
+            }
+            to {
+                box-shadow: 0 8px 30px rgba(0, 123, 255, 0.5);
+            }
+        }
+
+        @keyframes spin-3d {
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        @keyframes quantum-state {
+            0%, 100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            25% {
+                transform: translate(20px, -10px);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translate(10px, 15px);
+                opacity: 1;
+            }
+            75% {
+                transform: translate(-15px, 5px);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes float-infinity {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes float-particle {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px);
+                opacity: 0.5;
+            }
+            33% {
+                transform: translateY(-15px) translateX(10px);
+                opacity: 1;
+            }
+            66% {
+                transform: translateY(10px) translateX(-5px);
+                opacity: 0.7;
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .centenary-number {
+                font-size: 4rem;
+            }
+
+            .hero-dates {
+                padding: 1.5rem;
+            }
+
+            .dates-list {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .about-content, .registration-form {
+                padding: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo-entangled {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            .entanglement-visual {
+                width: 30px;
+                height: 15px;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-entangled">
+                    <div class="university-logo">UU</div>
+                    <div class="entanglement-visual">
+                        <div class="infinity-path"></div>
+                    </div>
+                    <div class="qiskit-logo">Q</div>
+                </div>
+                <span class="brand-text">Qiskit Fall Fest 2025</span>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#event" class="nav-link">Event ▼</a>
+                        <div class="dropdown">
+                            <a href="#about">About</a>
+                            <a href="#partners">Partners</a>
+                            <a href="#schedule">Schedule</a>
+                            <a href="#centenary">100 Years QM</a>
+                            <a href="#venue">Venue</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#team" class="nav-link">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#register" class="nav-link">Register</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="quantum-bg">
+            <div class="bloch-sphere">
+                <div class="bloch-outline">
+                    <div class="bloch-axis bloch-vertical"></div>
+                    <div class="bloch-axis bloch-horizontal"></div>
+                    <div class="bloch-point"></div>
+                </div>
+            </div>
+            
+            <div class="infinity-symbol">
+                <div class="infinity-path-bg"></div>
+            </div>
+
+            <div class="quantum-particles">
+                <div class="quantum-particle"></div>
+                <div class="quantum-particle"></div>
+                <div class="quantum-particle"></div>
+                <div class="quantum-particle"></div>
+                <div class="quantum-particle"></div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="centenary-badge">100 Years of Quantum Mechanics</div>
+            <div class="hero-subtitle">IBM Qiskit</div>
+            <h1 class="hero-title">Fall Fest</h1>
+            <div class="hero-year">2025</div>
+            
+            <div class="hero-dates">
+                <h2 class="dates-title">Pre-Workshop Classes Schedule</h2>
+                <div class="dates-list">
+                    <div class="date-item">
+                        <div class="date-day">Week 1</div>
+                        <div class="date-date">September 26th</div>
+                    </div>
+                    <div class="date-item">
+                        <div class="date-day">Week 2</div>
+                        <div class="date-date">October 3rd</div>
+                    </div>
+                    <div class="date-item">
+                        <div class="date-day">Week 3</div>
+                        <div class="date-date">October 10th</div>
+                    </div>
+                </div>
+                <p style="color: #ff69b4; font-weight: bold;">Every Friday | University of Uyo</p>
+            </div>
+            
+            <p class="hero-description">
+                Celebrating a century of quantum mechanics while building the future of quantum computing education at University of Uyo
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="#register" class="cta-button">Register Now</a>
+                <a href="#about" class="cta-button secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-content">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title">ABOUT THE EVENT</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    Welcome to the Qiskit Fall Fest 2025 at University of Uyo! As we celebrate 100 years of quantum mechanics, this groundbreaking event brings together students, researchers, and quantum computing enthusiasts for an immersive journey into the quantum realm.
+                </p>
+                <br>
+                <p class="about-text">
+                    Our pre-workshop classes, held every Friday starting September 26th through October 10th, will provide foundational knowledge and hands-on experience with quantum computing concepts, preparing participants for the exciting world of quantum technologies and IBM Qiskit development.
+                </p>
+            </div>
+            
+            <div class="centenary-highlight" id="centenary">
+                <div class="centenary-number">100</div>
+                <div class="centenary-text">Years of Quantum Mechanics</div>
+                <p style="margin-top: 2rem; color: #e2e8f0; font-size: 1.1rem; line-height: 1.6;">
+                    From Max Planck's quantum theory in 1900 to today's quantum computers, we celebrate a century of revolutionary discoveries that changed our understanding of reality and opened doors to technologies once thought impossible.
+                </p>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section id="partners" class="section">
+            <h2 class="section-title">PARTNERS</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo quantum-logo">∞</div>
+                    <h3 class="partner-name">Quantumplators</h3>
+                    <p class="partner-description">
+                        Leading quantum computing education and research initiatives, fostering innovation through comprehensive training programs and strategic partnerships that advance quantum literacy across Nigeria and Africa.
+                    </p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo qiskit-partner-logo">IBM</div>
+                    <h3 class="partner-name">IBM Qiskit</h3>
+                    <p class="partner-description">
+                        The world's leading open-source quantum development platform, enabling researchers, developers, and students to create quantum applications, access quantum systems, and contribute to the quantum computing ecosystem.
+                    </p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo uniuyo-logo">UU</div>
+                    <h3 class="partner-name">University of Uyo</h3>
+                    <p class="partner-description">
+                        A premier institution committed to academic excellence and innovation, providing the perfect environment for quantum computing education and research advancement in Nigeria. Unity, Learning, Service.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="section">
+            <h2 class="section-title">PRE-WORKSHOP SCHEDULE</h2>
+            <div class="schedule-grid">
+                <div class="schedule-item">
+                    <div class="schedule-week">Week 1</div>
+                    <div class="schedule-date">Friday, September 26th, 2025</div>
+                    <h3 class="schedule-title">Introduction to Quantum Mechanics & Computing Fundamentals</h3>
+                    <p class="schedule-description">
+                        Dive into the fascinating world of quantum mechanics, exploring superposition, entanglement, and the fundamental principles that make quantum computing possible. Learn about the historical journey from classical to quantum computing.
+                    </p>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-week">Week 2</div>
+                    <div class="schedule-date">Friday, October 3rd, 2025</div>
+                    <h3 class="schedule-title">Qiskit Framework & Quantum Circuits</h3>
+                    <p class="schedule-description">
+                        Hands-on introduction to IBM Qiskit, building your first quantum circuits, understanding quantum gates, and exploring quantum algorithms. Interactive coding sessions with real quantum simulators and hardware.
+                    </p>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-week">Week 3</div>
+                    <div class="schedule-date">Friday, October 10th, 2025</div>
+                    <h3 class="schedule-title">Advanced Quantum Algorithms & Future Applications</h3>
+                    <p class="schedule-description">
+                        Explore advanced quantum algorithms, quantum machine learning, cryptography applications, and the future of quantum technologies. Project presentations and preparation for the main Fall Fest event.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="register" class="section">
+            <h2 class="section-title">REGISTER FOR PRE-WORKSHOP CLASSES</h2>
+            <div class="registration-form">
+                <p style="text-align: center; margin-bottom: 2rem; color: #ff69b4; font-size: 1.1rem;">
+                    Join us in celebrating 100 years of quantum mechanics while shaping the future of quantum computing!
+                </p>
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name *</label>
+                        <input type="text" id="name" name="name" class="form-input" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-input" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" required placeholder="+234 XXX XXX XXXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="institution" class="form-label">Institution/Organization *</label>
+                        <input type="text" id="institution" name="institution" class="form-input" required placeholder="University of Uyo, Department...">
+                    </div>
+                    <div class="form-group">
+                        <label for="level" class="form-label">Academic Level *</label>
+                        <select id="level" name="level" class="form-input" required>
+                            <option value="">Select your level</option>
+                            <option value="undergraduate">Undergraduate</option>
+                            <option value="postgraduate">Postgraduate</option>
+                            <option value="faculty">Faculty/Staff</option>
+                            <option value="researcher">Researcher</option>
+                            <option value="industry">Industry Professional</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="experience" class="form-label">Quantum Computing Experience *</label>
+                        <select id="experience" name="experience" class="form-input" required>
+                            <option value="">Select your level</option>
+                            <option value="none">Complete Beginner</option>
+                            <option value="basic">Basic Knowledge</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="programming" class="form-label">Programming Experience</label>
+                        <select id="programming" name="programming" class="form-input">
+                            <option value="">Select your level</option>
+                            <option value="none">No Programming Experience</option>
+                            <option value="python">Python</option>
+                            <option value="other">Other Languages</option>
+                            <option value="multiple">Multiple Languages</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sessions" class="form-label">Which sessions can you attend? *</label>
+                        <div style="margin-top: 0.5rem;">
+                            <label style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #e2e8f0; font-weight: normal;">
+                                <input type="checkbox" name="sessions[]" value="week1" style="margin-right: 0.5rem;"> 
+                                Week 1 - September 26th (Quantum Fundamentals)
+                            </label>
+                            <label style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #e2e8f0; font-weight: normal;">
+                                <input type="checkbox" name="sessions[]" value="week2" style="margin-right: 0.5rem;"> 
+                                Week 2 - October 3rd (Qiskit & Circuits)
+                            </label>
+                            <label style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #e2e8f0; font-weight: normal;">
+                                <input type="checkbox" name="sessions[]" value="week3" style="margin-right: 0.5rem;"> 
+                                Week 3 - October 10th (Advanced Topics)
+                            </label>
+                            <label style="display: flex; align-items: center; color: #e2e8f0; font-weight: normal;">
+                                <input type="checkbox" name="sessions[]" value="all" style="margin-right: 0.5rem;"> 
+                                All Sessions (Recommended)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="motivation" class="form-label">Why do you want to join this quantum journey?</label>
+                        <textarea id="motivation" name="motivation" class="form-input" rows="4" placeholder="Tell us about your interest in quantum computing and what you hope to achieve..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="dietary" class="form-label">Dietary Requirements/Special Needs</label>
+                        <input type="text" id="dietary" name="dietary" class="form-input" placeholder="Any special accommodations needed?">
+                    </div>
+                    <button type="submit" class="form-button">🚀 Register for Quantum Journey</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="section">
+            <h2 class="section-title">ORGANIZING TEAM</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo quantum-logo">QE</div>
+                    <h3 class="partner-name">Quantum Educators</h3>
+                    <p class="partner-description">
+                        Dedicated faculty and researchers from University of Uyo's Physics and Computer Science departments, committed to advancing quantum education and research in Nigeria.
+                    </p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo qiskit-partner-logo">QA</div>
+                    <h3 class="partner-name">Qiskit Advocates</h3>
+                    <p class="partner-description">
+                        Passionate student volunteers and IBM Qiskit community members working to make quantum computing accessible to everyone through hands-on learning and mentorship.
+                    </p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo uniuyo-logo">RC</div>
+                    <h3 class="partner-name">Research Coordinators</h3>
+                    <p class="partner-description">
+                        Experienced researchers and industry partners coordinating the technical aspects of the program, ensuring cutting-edge content and real-world applications.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="university-info">
+                <h3 class="university-name">University of Uyo</h3>
+                <p style="color: #ff69b4; font-weight: bold; margin-bottom: 1rem;">Unity, Learning, Service</p>
+                <p class="contact-info">PMB 1017, Uyo, Akwa Ibom State, Nigeria</p>
+                <p class="contact-info">📧 qiskitfallfast2025@uniuyo.edu.ng | 📱 +234 XXX XXX XXXX</p>
+                <p class="contact-info">🌐 www.uniuyo.edu.ng | 🔬 Department of Physics & Computer Science</p>
+            </div>
+            <div style="margin: 2rem 0; padding: 1rem; background: rgba(255, 105, 180, 0.1); border-radius: 10px;">
+                <p style="color: #ff69b4; font-weight: bold;">🎉 Celebrating 100 Years of Quantum Mechanics (1924-2024) 🎉</p>
+                <p style="color: #e2e8f0; margin-top: 0.5rem;">From Max Planck to Quantum Computers - The Journey Continues at UniUyo</p>
+            </div>
+            <p style="color: #a78bfa;">© 2025 Qiskit Fall Fest - University of Uyo. All rights reserved.</p>
+            <p style="color: #6f42c1; font-size: 0.9rem; margin-top: 0.5rem;">
+                Powered by IBM Qiskit | Organized by Quantumplators | Hosted by University of Uyo
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Registration form handling
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Check if at least one session is selected
+            const sessions = document.querySelectorAll('input[name="sessions[]"]:checked');
+            if (sessions.length === 0) {
+                alert('Please select at least one session you can attend.');
+                return;
+            }
+            
+            // Show success message with quantum flair
+            const messages = [
+                '🎉 Quantum registration successful! Your quantum state has been entangled with our database.',
+                '⚛️ Welcome to the quantum realm! Registration confirmed for the quantum journey.',
+                '🚀 Quantum leap achieved! You\'re now part of the 100-year quantum celebration.',
+                '🌟 Superposition collapsed! Your registration is now in a definite "CONFIRMED" state.'
+            ];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            
+            alert(randomMessage + '\n\nWe will send you detailed information about the pre-workshop classes to your email address.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Dynamic quantum particles creation
+        function createQuantumParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'quantum-particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 8 + 's';
+            
+            // Random colors for particles
+            const colors = ['#ff69b4', '#6f42c1', '#007bff'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            particle.style.background = color;
+            particle.style.boxShadow = `0 0 10px ${color}`;
+            
+            document.querySelector('.quantum-particles').appendChild(particle);
+            
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.remove();
+                }
+            }, 8000);
+        }
+
+        // Create particles periodically
+        setInterval(createQuantumParticle, 3000);
+
+        // Initialize some particles on load
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createQuantumParticle, i * 500);
+        }
+
+        // Add quantum entanglement effect to logo
+        const universityLogo = document.querySelector('.university-logo');
+        const qiskitLogo = document.querySelector('.qiskit-logo');
+        const entanglementVisual = document.querySelector('.entanglement-visual');
+
+        function entanglementEffect() {
+            universityLogo.style.transform = 'scale(1.1) rotate(5deg)';
+            qiskitLogo.style.transform = 'scale(1.1) rotate(-5deg)';
+            entanglementVisual.style.filter = 'brightness(1.5)';
+            
+            setTimeout(() => {
+                universityLogo.style.transform = 'scale(1) rotate(0deg)';
+                qiskitLogo.style.transform = 'scale(1) rotate(0deg)';
+                entanglementVisual.style.filter = 'brightness(1)';
+            }, 500);
+        }
+
+        // Trigger entanglement effect periodically
+        setInterval(entanglementEffect, 5000);
+
+        // Easter egg: Konami code for quantum surprise
+        let konamiCode = [];
+        const konamiSequence = [
+            'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+            'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
+            'KeyB', 'KeyA'
+        ];
+
+        document.addEventListener('keydown', function(e) {
+            konamiCode.push(e.code);
+            konamiCode = konamiCode.slice(-10);
+            
+            if (konamiCode.join(',') === konamiSequence.join(',')) {
+                // Quantum surprise!
+                document.body.style.animation = 'rainbow-glow 2s ease-in-out 3';
+                alert('🎊 Quantum Konami Code activated! You\'ve unlocked the quantum developer mode! 🎊\n\nYou are now in superposition of being both registered and unregistered until observed by our organizing team! 😄');
+                konamiCode = [];
+            }
+        });
+
+        // Quantum clock showing time until event
+        function updateQuantumClock() {
+            const now = new Date();
+            const firstSession = new Date('2025-09-26T09:00:00');
+            const timeDiff = firstSession - now;
+            
+            if (timeDiff > 0) {
+                const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                
+                const clockElement = document.createElement('div');
+                clockElement.style.cssText = `
+                    position: fixed;
+                    top: 100px;
+                    right: 20px;
+                    background: rgba(255, 105, 180, 0.1);
+                    border: 1px solid rgba(255, 105, 180, 0.3);
+                    border-radius: 10px;
+                    padding: 1rem;
+                    font-size: 0.9rem;
+                    color: #ff69b4;
+                    backdrop-filter: blur(10px);
+                    z-index: 999;
+                `;
+                clockElement.innerHTML = `
+                    <div style="font-weight: bold; margin-bottom: 0.5rem;">⏰ Quantum Countdown</div>
+                    <div>${days}d ${hours}h ${minutes}m</div>
+                    <div style="font-size: 0.8rem; opacity: 0.8;">until first session</div>
+                `;
+                
+                // Remove existing clock
+                const existingClock = document.getElementById('quantum-clock');
+                if (existingClock) existingClock.remove();
+                
+                clockElement.id = 'quantum-clock';
+                document.body.appendChild(clockElement);
+            }
+        }
+
+        // Update clock every minute
+        updateQuantumClock();
+        setInterval(updateQuantumClock, 60000);
+    </script>
+</body>
+</html>
