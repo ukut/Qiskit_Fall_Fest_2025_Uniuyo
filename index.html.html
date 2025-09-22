@@ -53,16 +53,16 @@
         }
 
         .university-logo {
-            width: 45px;
+            width: 60px;
             height: 45px;
-            border-radius: 50%;
+            border-radius: 8px;
             background: linear-gradient(45deg, #228B22, #8B4513);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-weight: bold;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             border: 2px solid #FFD700;
             position: relative;
             z-index: 2;
@@ -272,6 +272,27 @@
         .date-date {
             color: #ff69b4;
             font-size: 0.9rem;
+        }
+
+        .main-workshop {
+            background: rgba(0, 123, 255, 0.2);
+            border: 2px solid rgba(0, 123, 255, 0.4);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .main-workshop-title {
+            font-size: 1.2rem;
+            color: #007bff;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .main-workshop-dates {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: bold;
         }
 
         .hero-description {
@@ -590,8 +611,15 @@
             background: linear-gradient(45deg, #6f42c1, #007bff);
         }
 
-        .quantum-logo {
-            background: linear-gradient(45deg, #ff69b4, #6f42c1);
+        .qnigeria-logo {
+            background: linear-gradient(45deg, #228B22, #ffffff);
+            border: 2px solid #228B22;
+            color: #228B22;
+        }
+
+        .aqc-logo {
+            background: linear-gradient(45deg, #FFD700, #FF6B35);
+            color: #000000;
         }
 
         .partner-name {
@@ -603,6 +631,77 @@
         .partner-description {
             color: #e2e8f0;
             line-height: 1.6;
+        }
+
+        /* Speakers Section */
+        .speakers-placeholder {
+            background: rgba(111, 66, 193, 0.1);
+            border: 2px dashed rgba(111, 66, 193, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .speakers-placeholder h3 {
+            color: #6f42c1;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .speakers-placeholder p {
+            color: #e2e8f0;
+            font-size: 1.1rem;
+        }
+
+        /* Organizers Section */
+        .organizers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .organizer-card {
+            background: rgba(255, 105, 180, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 105, 180, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .organizer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.2);
+        }
+
+        .organizer-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff69b4, #6f42c1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin: 0 auto 1rem;
+        }
+
+        .organizer-name {
+            font-size: 1.3rem;
+            color: #ff69b4;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .organizer-title {
+            color: #6f42c1;
+            font-size: 1rem;
+            margin-bottom: 1rem;
         }
 
         /* Registration Section */
@@ -836,7 +935,7 @@
         <div class="nav-container">
             <div class="logo">
                 <div class="logo-entangled">
-                    <div class="university-logo">UU</div>
+                    <div class="university-logo">UNIUYO</div>
                     <div class="entanglement-visual">
                         <div class="infinity-path"></div>
                     </div>
@@ -847,20 +946,18 @@
             <nav>
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="#home" class="nav-link active">Home</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="#event" class="nav-link">Event ▼</a>
                         <div class="dropdown">
                             <a href="#about">About</a>
                             <a href="#partners">Partners</a>
                             <a href="#schedule">Schedule</a>
                             <a href="#centenary">100 Years QM</a>
+                            <a href="#speakers">Speakers</a>
                             <a href="#venue">Venue</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a href="#team" class="nav-link">Team</a>
+                        <a href="#organizers" class="nav-link">Organizers</a>
                     </li>
                     <li class="nav-item">
                         <a href="#register" class="nav-link">Register</a>
@@ -905,18 +1002,23 @@
                 <div class="dates-list">
                     <div class="date-item">
                         <div class="date-day">Week 1</div>
-                        <div class="date-date">September 26th</div>
+                        <div class="date-date">September 25th</div>
                     </div>
                     <div class="date-item">
                         <div class="date-day">Week 2</div>
-                        <div class="date-date">October 3rd</div>
+                        <div class="date-date">October 2nd</div>
                     </div>
                     <div class="date-item">
                         <div class="date-day">Week 3</div>
-                        <div class="date-date">October 10th</div>
+                        <div class="date-date">October 09th</div>
                     </div>
                 </div>
                 <p style="color: #ff69b4; font-weight: bold;">Every Friday | University of Uyo</p>
+                
+                <div class="main-workshop">
+                    <h3 class="main-workshop-title">Main Workshop</h3>
+                    <p class="main-workshop-dates">October 16th - 18th, 2025</p>
+                </div>
             </div>
             
             <p class="hero-description">
@@ -940,7 +1042,7 @@
                 </p>
                 <br>
                 <p class="about-text">
-                    Our pre-workshop classes, held every Friday starting September 26th through October 10th, will provide foundational knowledge and hands-on experience with quantum computing concepts, preparing participants for the exciting world of quantum technologies and IBM Qiskit development.
+                    Our pre-workshop classes, held every Thursday starting September 26th through October 09th, will provide foundational knowledge and hands-on experience with quantum computing concepts, preparing participants for the main workshop on October 16th-18th, 2025.
                 </p>
             </div>
             
@@ -958,10 +1060,17 @@
             <h2 class="section-title">PARTNERS</h2>
             <div class="partners-grid">
                 <div class="partner-card">
-                    <div class="partner-logo quantum-logo">∞</div>
-                    <h3 class="partner-name">Quantumplators</h3>
+                    <div class="partner-logo qnigeria-logo">QN</div>
+                    <h3 class="partner-name">QNigeria</h3>
                     <p class="partner-description">
-                        Leading quantum computing education and research initiatives, fostering innovation through comprehensive training programs and strategic partnerships that advance quantum literacy across Nigeria and Africa.
+                        Leading quantum computing community in Nigeria, fostering innovation and education in quantum technologies across the country through workshops, research collaborations, and advocacy for quantum science development.
+                    </p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo aqc-logo">AQC</div>
+                    <h3 class="partner-name">African Quantum Consortium</h3>
+                    <p class="partner-description">
+                        Continental organization promoting quantum research, education, and collaboration across Africa, connecting researchers and institutions to advance quantum science and technology on the continent.
                     </p>
                 </div>
                 <div class="partner-card">
@@ -972,7 +1081,7 @@
                     </p>
                 </div>
                 <div class="partner-card">
-                    <div class="partner-logo uniuyo-logo">UU</div>
+                    <div class="partner-logo uniuyo-logo">UNIUYO</div>
                     <h3 class="partner-name">University of Uyo</h3>
                     <p class="partner-description">
                         A premier institution committed to academic excellence and innovation, providing the perfect environment for quantum computing education and research advancement in Nigeria. Unity, Learning, Service.
@@ -987,7 +1096,7 @@
             <div class="schedule-grid">
                 <div class="schedule-item">
                     <div class="schedule-week">Week 1</div>
-                    <div class="schedule-date">Friday, September 26th, 2025</div>
+                    <div class="schedule-date">Thursday, September 25th, 2025</div>
                     <h3 class="schedule-title">Introduction to Quantum Mechanics & Computing Fundamentals</h3>
                     <p class="schedule-description">
                         Dive into the fascinating world of quantum mechanics, exploring superposition, entanglement, and the fundamental principles that make quantum computing possible. Learn about the historical journey from classical to quantum computing.
@@ -995,7 +1104,7 @@
                 </div>
                 <div class="schedule-item">
                     <div class="schedule-week">Week 2</div>
-                    <div class="schedule-date">Friday, October 3rd, 2025</div>
+                    <div class="schedule-date">Thursday, October 2nd, 2025</div>
                     <h3 class="schedule-title">Qiskit Framework & Quantum Circuits</h3>
                     <p class="schedule-description">
                         Hands-on introduction to IBM Qiskit, building your first quantum circuits, understanding quantum gates, and exploring quantum algorithms. Interactive coding sessions with real quantum simulators and hardware.
@@ -1003,10 +1112,53 @@
                 </div>
                 <div class="schedule-item">
                     <div class="schedule-week">Week 3</div>
-                    <div class="schedule-date">Friday, October 10th, 2025</div>
+                    <div class="schedule-date">Friday, October 09th, 2025</div>
                     <h3 class="schedule-title">Advanced Quantum Algorithms & Future Applications</h3>
                     <p class="schedule-description">
-                        Explore advanced quantum algorithms, quantum machine learning, cryptography applications, and the future of quantum technologies. Project presentations and preparation for the main Fall Fest event.
+                        Explore advanced quantum algorithms, quantum optimization, and the future of quantum technologies. Project presentations and preparation for the main Fall Fest event on October 16th-18th.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speakers Section -->
+        <section id="speakers" class="section">
+            <h2 class="section-title">SPEAKERS</h2>
+            <div class="speakers-placeholder">
+                <h3>🎯 Speaker Lineup Coming Soon</h3>
+                <p>We are currently finalizing our distinguished lineup of quantum computing experts, researchers, and industry leaders who will be sharing their knowledge and insights during the Fall Fest. Stay tuned for exciting announcements!</p>
+            </div>
+        </section>
+
+        <!-- Organizers Section -->
+        <section id="organizers" class="section">
+            <h2 class="section-title">ORGANIZERS</h2>
+            <div class="organizers-grid">
+                <div class="organizer-card">
+                    <div class="organizer-avatar">DB</div>
+                    <h3 class="organizer-name">Doctor Bliss</h3>
+                    <p class="organizer-title">Lead Organizer & Co-organizer</p>
+                </div>
+                <div class="organizer-card">
+                    <div class="organizer-avatar">IU</div>
+                    <h3 class="organizer-name">Mr Ini Ekpenyong Ukut</h3>
+                    <p class="organizer-title">Co-organizer</p>
+                </div>
+            </div>
+            
+            <div class="partners-grid" style="margin-top: 3rem;">
+                <div class="partner-card">
+                    <div class="partner-logo quantum-logo">QE</div>
+                    <h3 class="partner-name">Quantum Educators</h3>
+                    <p class="partner-description">
+                        Dedicated faculty and researchers from University of Uyo's Physics and Computer Engineering departments, committed to advancing quantum education and research in Nigeria.
+                    </p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo uniuyo-logo">RC</div>
+                    <h3 class="partner-name">Research Coordinators</h3>
+                    <p class="partner-description">
+                        Experienced researchers and industry partners coordinating the technical aspects of the program, ensuring cutting-edge content and real-world applications.
                     </p>
                 </div>
             </div>
@@ -1083,6 +1235,10 @@
                                 <input type="checkbox" name="sessions[]" value="week3" style="margin-right: 0.5rem;"> 
                                 Week 3 - October 10th (Advanced Topics)
                             </label>
+                            <label style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #e2e8f0; font-weight: normal;">
+                                <input type="checkbox" name="sessions[]" value="main" style="margin-right: 0.5rem;"> 
+                                Main Workshop - October 16th-18th
+                            </label>
                             <label style="display: flex; align-items: center; color: #e2e8f0; font-weight: normal;">
                                 <input type="checkbox" name="sessions[]" value="all" style="margin-right: 0.5rem;"> 
                                 All Sessions (Recommended)
@@ -1101,34 +1257,6 @@
                 </form>
             </div>
         </section>
-
-        <!-- Team Section -->
-        <section id="team" class="section">
-            <h2 class="section-title">ORGANIZING TEAM</h2>
-            <div class="partners-grid">
-                <div class="partner-card">
-                    <div class="partner-logo quantum-logo">QE</div>
-                    <h3 class="partner-name">Quantum Educators</h3>
-                    <p class="partner-description">
-                        Dedicated faculty and researchers from University of Uyo's Physics and Computer Science departments, committed to advancing quantum education and research in Nigeria.
-                    </p>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-logo qiskit-partner-logo">QA</div>
-                    <h3 class="partner-name">Qiskit Advocates</h3>
-                    <p class="partner-description">
-                        Passionate student volunteers and IBM Qiskit community members working to make quantum computing accessible to everyone through hands-on learning and mentorship.
-                    </p>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-logo uniuyo-logo">RC</div>
-                    <h3 class="partner-name">Research Coordinators</h3>
-                    <p class="partner-description">
-                        Experienced researchers and industry partners coordinating the technical aspects of the program, ensuring cutting-edge content and real-world applications.
-                    </p>
-                </div>
-            </div>
-        </section>
     </div>
 
     <!-- Footer -->
@@ -1138,8 +1266,8 @@
                 <h3 class="university-name">University of Uyo</h3>
                 <p style="color: #ff69b4; font-weight: bold; margin-bottom: 1rem;">Unity, Learning, Service</p>
                 <p class="contact-info">PMB 1017, Uyo, Akwa Ibom State, Nigeria</p>
-                <p class="contact-info">📧 qiskitfallfast2025@uniuyo.edu.ng | 📱 +234 XXX XXX XXXX</p>
-                <p class="contact-info">🌐 www.uniuyo.edu.ng | 🔬 Department of Physics & Computer Science</p>
+                <p class="contact-info">📧 blissstephen@uniuyo.edu.ng | 📱 +2348134852136</p>
+                <p class="contact-info">🌐 www.uniuyo.edu.ng | 🔬 Department of Physics & Computer Engineering</p>
             </div>
             <div style="margin: 2rem 0; padding: 1rem; background: rgba(255, 105, 180, 0.1); border-radius: 10px;">
                 <p style="color: #ff69b4; font-weight: bold;">🎉 Celebrating 100 Years of Quantum Mechanics (1924-2024) 🎉</p>
@@ -1147,7 +1275,7 @@
             </div>
             <p style="color: #a78bfa;">© 2025 Qiskit Fall Fest - University of Uyo. All rights reserved.</p>
             <p style="color: #6f42c1; font-size: 0.9rem; margin-top: 0.5rem;">
-                Powered by IBM Qiskit | Organized by Quantumplators | Hosted by University of Uyo
+                Powered by IBM Qiskit | Organized by QNigeria & African Quantum Consortium | Hosted by University of Uyo
             </p>
         </div>
     </footer>
@@ -1213,7 +1341,7 @@
             ];
             const randomMessage = messages[Math.floor(Math.random() * messages.length)];
             
-            alert(randomMessage + '\n\nWe will send you detailed information about the pre-workshop classes to your email address.');
+            alert(randomMessage + '\n\nWe will send you detailed information about the pre-workshop classes and main workshop to your email address.');
             
             // Reset form
             this.reset();
@@ -1335,4 +1463,7 @@
         setInterval(updateQuantumClock, 60000);
     </script>
 </body>
-</html>
+</html>="#home" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href
