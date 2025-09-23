@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -136,7 +137,8 @@
             gap: 0.5rem;
         }
 
-        .nav-link:hover, .nav-link.active {
+        .nav-link:hover,
+        .nav-link.active {
             background: linear-gradient(45deg, #ff69b4, #6f42c1);
             box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
         }
@@ -435,11 +437,35 @@
             animation-duration: 8s;
         }
 
-        .quantum-particle:nth-child(1) { top: 20%; left: 10%; animation-delay: -2s; }
-        .quantum-particle:nth-child(2) { top: 80%; left: 20%; animation-delay: -4s; }
-        .quantum-particle:nth-child(3) { top: 40%; left: 80%; animation-delay: -1s; }
-        .quantum-particle:nth-child(4) { top: 60%; left: 70%; animation-delay: -3s; }
-        .quantum-particle:nth-child(5) { top: 10%; left: 60%; animation-delay: -5s; }
+        .quantum-particle:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: -2s;
+        }
+
+        .quantum-particle:nth-child(2) {
+            top: 80%;
+            left: 20%;
+            animation-delay: -4s;
+        }
+
+        .quantum-particle:nth-child(3) {
+            top: 40%;
+            left: 80%;
+            animation-delay: -1s;
+        }
+
+        .quantum-particle:nth-child(4) {
+            top: 60%;
+            left: 70%;
+            animation-delay: -3s;
+        }
+
+        .quantum-particle:nth-child(5) {
+            top: 10%;
+            left: 60%;
+            animation-delay: -5s;
+        }
 
         /* Main Content */
         .main-content {
@@ -790,9 +816,12 @@
 
         /* Animations */
         @keyframes quantum-flow {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translate(-50%, -50%) rotate(0deg) scale(1);
             }
+
             50% {
                 transform: translate(-50%, -50%) rotate(180deg) scale(1.1);
             }
@@ -803,14 +832,17 @@
                 filter: hue-rotate(0deg) brightness(1.2);
                 text-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
             }
+
             33% {
                 filter: hue-rotate(120deg) brightness(1.4);
                 text-shadow: 0 0 40px rgba(111, 66, 193, 0.6);
             }
+
             66% {
                 filter: hue-rotate(240deg) brightness(1.3);
                 text-shadow: 0 0 35px rgba(0, 123, 255, 0.5);
             }
+
             100% {
                 filter: hue-rotate(360deg) brightness(1.2);
                 text-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
@@ -821,6 +853,7 @@
             from {
                 box-shadow: 0 5px 20px rgba(0, 123, 255, 0.3);
             }
+
             to {
                 box-shadow: 0 8px 30px rgba(0, 123, 255, 0.5);
             }
@@ -830,24 +863,30 @@
             from {
                 transform: rotateX(0deg) rotateY(0deg);
             }
+
             to {
                 transform: rotateX(360deg) rotateY(360deg);
             }
         }
 
         @keyframes quantum-state {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translate(0, 0);
                 opacity: 1;
             }
+
             25% {
                 transform: translate(20px, -10px);
                 opacity: 0.7;
             }
+
             50% {
                 transform: translate(10px, 15px);
                 opacity: 1;
             }
+
             75% {
                 transform: translate(-15px, 5px);
                 opacity: 0.8;
@@ -855,10 +894,13 @@
         }
 
         @keyframes float-infinity {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0px) rotate(0deg);
                 opacity: 0.4;
             }
+
             50% {
                 transform: translateY(-20px) rotate(180deg);
                 opacity: 0.6;
@@ -866,14 +908,18 @@
         }
 
         @keyframes float-particle {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0px) translateX(0px);
                 opacity: 0.5;
             }
+
             33% {
                 transform: translateY(-15px) translateX(10px);
                 opacity: 1;
             }
+
             66% {
                 transform: translateY(10px) translateX(-5px);
                 opacity: 0.7;
@@ -907,7 +953,8 @@
                 padding-right: 1rem;
             }
 
-            .about-content, .registration-form {
+            .about-content,
+            .registration-form {
                 padding: 2rem;
             }
 
@@ -929,6 +976,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -977,7 +1025,7 @@
                     <div class="bloch-point"></div>
                 </div>
             </div>
-            
+
             <div class="infinity-symbol">
                 <div class="infinity-path-bg"></div>
             </div>
@@ -990,13 +1038,13 @@
                 <div class="quantum-particle"></div>
             </div>
         </div>
-        
+
         <div class="hero-content">
             <div class="centenary-badge">100 Years of Quantum Mechanics</div>
             <div class="hero-subtitle">IBM Qiskit</div>
             <h1 class="hero-title">Fall Fest</h1>
             <div class="hero-year">2025</div>
-            
+
             <div class="hero-dates">
                 <h2 class="dates-title">Pre-Workshop Classes Schedule</h2>
                 <div class="dates-list">
@@ -1014,17 +1062,18 @@
                     </div>
                 </div>
                 <p style="color: #ff69b4; font-weight: bold;">Every Thursday | University of Uyo</p>
-                
+
                 <div class="main-workshop">
                     <h3 class="main-workshop-title">Main Workshop</h3>
                     <p class="main-workshop-dates">October 16th - 18th, 2025</p>
                 </div>
             </div>
-            
+
             <p class="hero-description">
-                Celebrating a century of quantum mechanics while building the future of quantum computing education at University of Uyo
+                Celebrating a century of quantum mechanics while building the future of quantum computing education at
+                University of Uyo
             </p>
-            
+
             <div class="cta-buttons">
                 <a href="#register" class="cta-button">Register Now</a>
                 <a href="#about" class="cta-button secondary">Learn More</a>
@@ -1038,19 +1087,25 @@
             <h2 class="section-title">ABOUT THE EVENT</h2>
             <div class="about-content">
                 <p class="about-text">
-                    Welcome to the Qiskit Fall Fest 2025 at University of Uyo! As we celebrate 100 years of quantum mechanics, this groundbreaking event brings together students, researchers, and quantum computing enthusiasts for an immersive journey into the quantum realm.
+                    Welcome to the Qiskit Fall Fest 2025 at University of Uyo! As we celebrate 100 years of quantum
+                    mechanics, this groundbreaking event brings together students, researchers, and quantum computing
+                    enthusiasts for an immersive journey into the quantum realm.
                 </p>
                 <br>
                 <p class="about-text">
-                    Our pre-workshop classes, held every Thursday starting September 26th through October 09th, will provide foundational knowledge and hands-on experience with quantum computing concepts, preparing participants for the main workshop on October 16th-18th, 2025.
+                    Our pre-workshop classes, held every Thursday starting September 26th through October 09th, will
+                    provide foundational knowledge and hands-on experience with quantum computing concepts, preparing
+                    participants for the main workshop on October 16th-18th, 2025.
                 </p>
             </div>
-            
+
             <div class="centenary-highlight" id="centenary">
                 <div class="centenary-number">100</div>
                 <div class="centenary-text">Years of Quantum Mechanics</div>
                 <p style="margin-top: 2rem; color: #e2e8f0; font-size: 1.1rem; line-height: 1.6;">
-                    From Max Planck's quantum theory in 1900 to today's quantum computers, we celebrate a century of revolutionary discoveries that changed our understanding of reality and opened doors to technologies once thought impossible.
+                    From Max Planck's quantum theory in 1900 to today's quantum computers, we celebrate a century of
+                    revolutionary discoveries that changed our understanding of reality and opened doors to technologies
+                    once thought impossible.
                 </p>
             </div>
         </section>
@@ -1063,28 +1118,36 @@
                     <div class="partner-logo qnigeria-logo">QN</div>
                     <h3 class="partner-name">QNigeria</h3>
                     <p class="partner-description">
-                        Leading quantum computing community in Nigeria, fostering innovation and education in quantum technologies across the country through workshops, research collaborations, and advocacy for quantum science development.
+                        Leading quantum computing community in Nigeria, fostering innovation and education in quantum
+                        technologies across the country through workshops, research collaborations, and advocacy for
+                        quantum science development.
                     </p>
                 </div>
                 <div class="partner-card">
                     <div class="partner-logo aqc-logo">AQC</div>
                     <h3 class="partner-name">African Quantum Consortium</h3>
                     <p class="partner-description">
-                        Continental organization promoting quantum research, education, and collaboration across Africa, connecting researchers and institutions to advance quantum science and technology on the continent.
+                        Continental organization promoting quantum research, education, and collaboration across Africa,
+                        connecting researchers and institutions to advance quantum science and technology on the
+                        continent.
                     </p>
                 </div>
                 <div class="partner-card">
                     <div class="partner-logo qiskit-partner-logo">IBM</div>
                     <h3 class="partner-name">IBM Qiskit</h3>
                     <p class="partner-description">
-                        The world's leading open-source quantum development platform, enabling researchers, developers, and students to create quantum applications, access quantum systems, and contribute to the quantum computing ecosystem.
+                        The world's leading open-source quantum development platform, enabling researchers, developers,
+                        and students to create quantum applications, access quantum systems, and contribute to the
+                        quantum computing ecosystem.
                     </p>
                 </div>
                 <div class="partner-card">
                     <div class="partner-logo uniuyo-logo">UNIUYO</div>
                     <h3 class="partner-name">University of Uyo</h3>
                     <p class="partner-description">
-                        A premier institution committed to academic excellence and innovation, providing the perfect environment for quantum computing education and research advancement in Nigeria. Unity, Learning, Service.
+                        A premier institution committed to academic excellence and innovation, providing the perfect
+                        environment for quantum computing education and research advancement in Nigeria. Unity,
+                        Learning, Service.
                     </p>
                 </div>
             </div>
@@ -1099,7 +1162,9 @@
                     <div class="schedule-date">Thursday, September 25th, 2025</div>
                     <h3 class="schedule-title">Introduction to Quantum Mechanics & Computing Fundamentals</h3>
                     <p class="schedule-description">
-                        Dive into the fascinating world of quantum mechanics, exploring superposition, entanglement, and the fundamental principles that make quantum computing possible. Learn about the historical journey from classical to quantum computing.
+                        Dive into the fascinating world of quantum mechanics, exploring superposition, entanglement, and
+                        the fundamental principles that make quantum computing possible. Learn about the historical
+                        journey from classical to quantum computing.
                     </p>
                 </div>
                 <div class="schedule-item">
@@ -1107,7 +1172,9 @@
                     <div class="schedule-date">Thursday, October 2nd, 2025</div>
                     <h3 class="schedule-title">Qiskit Framework & Quantum Circuits</h3>
                     <p class="schedule-description">
-                        Hands-on introduction to IBM Qiskit, building your first quantum circuits, understanding quantum gates, and exploring quantum algorithms. Interactive coding sessions with real quantum simulators and hardware.
+                        Hands-on introduction to IBM Qiskit, building your first quantum circuits, understanding quantum
+                        gates, and exploring quantum algorithms. Interactive coding sessions with real quantum
+                        simulators and hardware.
                     </p>
                 </div>
                 <div class="schedule-item">
@@ -1115,7 +1182,9 @@
                     <div class="schedule-date">Friday, October 09th, 2025</div>
                     <h3 class="schedule-title">Advanced Quantum Algorithms & Future Applications</h3>
                     <p class="schedule-description">
-                        Explore advanced quantum algorithms, quantum optimization, and the future of quantum technologies. Project presentations and preparation for the main Fall Fest event on October 16th-18th.
+                        Explore advanced quantum algorithms, quantum optimization, and the future of quantum
+                        technologies. Project presentations and preparation for the main Fall Fest event on October
+                        16th-18th.
                     </p>
                 </div>
             </div>
@@ -1126,7 +1195,9 @@
             <h2 class="section-title">SPEAKERS</h2>
             <div class="speakers-placeholder">
                 <h3>🎯 Speaker Lineup Coming Soon</h3>
-                <p>We are currently finalizing our distinguished lineup of quantum computing experts, researchers, and industry leaders who will be sharing their knowledge and insights during the Fall Fest. Stay tuned for exciting announcements!</p>
+                <p>We are currently finalizing our distinguished lineup of quantum computing experts, researchers, and
+                    industry leaders who will be sharing their knowledge and insights during the Fall Fest. Stay tuned
+                    for exciting announcements!</p>
             </div>
         </section>
 
@@ -1145,20 +1216,22 @@
                     <p class="organizer-title">Co-organizer</p>
                 </div>
             </div>
-            
+
             <div class="partners-grid" style="margin-top: 3rem;">
                 <div class="partner-card">
                     <div class="partner-logo quantum-logo">QE</div>
                     <h3 class="partner-name">Quantum Educators</h3>
                     <p class="partner-description">
-                        Dedicated faculty and researchers from University of Uyo's Physics and Computer Engineering departments, committed to advancing quantum education and research in Nigeria.
+                        Dedicated faculty and researchers from University of Uyo's Physics and Computer Engineering
+                        departments, committed to advancing quantum education and research in Nigeria.
                     </p>
                 </div>
                 <div class="partner-card">
                     <div class="partner-logo uniuyo-logo">RC</div>
                     <h3 class="partner-name">Research Coordinators</h3>
                     <p class="partner-description">
-                        Experienced researchers and industry partners coordinating the technical aspects of the program, ensuring cutting-edge content and real-world applications.
+                        Experienced researchers and industry partners coordinating the technical aspects of the program,
+                        ensuring cutting-edge content and real-world applications.
                     </p>
                 </div>
             </div>
@@ -1167,26 +1240,33 @@
         <!-- Registration Section -->
         <section id="register" class="section">
             <h2 class="section-title">REGISTER FOR PRE-WORKSHOP CLASSES</h2>
-            <div class="registration-form">
+            <iframe src="https://luma.com/embed/event/evt-EY0gBcP1l5FPkCb/simple" width="100%" height="450"
+                frameborder="0" style="border: 1px solid #bfcbda88; border-radius: 4px;" allow="fullscreen; payment"
+                aria-hidden="false" tabindex="0"></iframe>
+            <!-- <div class="registration-form">
                 <p style="text-align: center; margin-bottom: 2rem; color: #ff69b4; font-size: 1.1rem;">
                     Join us in celebrating 100 years of quantum mechanics while shaping the future of quantum computing!
                 </p>
                 <form id="registrationForm">
                     <div class="form-group">
                         <label for="name" class="form-label">Full Name *</label>
-                        <input type="text" id="name" name="name" class="form-input" required placeholder="Enter your full name">
+                        <input type="text" id="name" name="name" class="form-input" required
+                            placeholder="Enter your full name">
                     </div>
                     <div class="form-group">
                         <label for="email" class="form-label">Email Address *</label>
-                        <input type="email" id="email" name="email" class="form-input" required placeholder="your.email@example.com">
+                        <input type="email" id="email" name="email" class="form-input" required
+                            placeholder="your.email@example.com">
                     </div>
                     <div class="form-group">
                         <label for="phone" class="form-label">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" class="form-input" required placeholder="+234 XXX XXX XXXX">
+                        <input type="tel" id="phone" name="phone" class="form-input" required
+                            placeholder="+234 XXX XXX XXXX">
                     </div>
                     <div class="form-group">
                         <label for="institution" class="form-label">Institution/Organization *</label>
-                        <input type="text" id="institution" name="institution" class="form-input" required placeholder="University of Uyo, Department...">
+                        <input type="text" id="institution" name="institution" class="form-input" required
+                            placeholder="University of Uyo, Department...">
                     </div>
                     <div class="form-group">
                         <label for="level" class="form-label">Academic Level *</label>
@@ -1223,39 +1303,45 @@
                     <div class="form-group">
                         <label for="sessions" class="form-label">Which sessions can you attend? *</label>
                         <div style="margin-top: 0.5rem;">
-                            <label style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #e2e8f0; font-weight: normal;">
-                                <input type="checkbox" name="sessions[]" value="week1" style="margin-right: 0.5rem;"> 
+                            <label
+                                style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #e2e8f0; font-weight: normal;">
+                                <input type="checkbox" name="sessions[]" value="week1" style="margin-right: 0.5rem;">
                                 Week 1 - September 26th (Quantum Fundamentals)
                             </label>
-                            <label style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #e2e8f0; font-weight: normal;">
-                                <input type="checkbox" name="sessions[]" value="week2" style="margin-right: 0.5rem;"> 
+                            <label
+                                style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #e2e8f0; font-weight: normal;">
+                                <input type="checkbox" name="sessions[]" value="week2" style="margin-right: 0.5rem;">
                                 Week 2 - October 3rd (Qiskit & Circuits)
                             </label>
-                            <label style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #e2e8f0; font-weight: normal;">
-                                <input type="checkbox" name="sessions[]" value="week3" style="margin-right: 0.5rem;"> 
+                            <label
+                                style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #e2e8f0; font-weight: normal;">
+                                <input type="checkbox" name="sessions[]" value="week3" style="margin-right: 0.5rem;">
                                 Week 3 - October 10th (Advanced Topics)
                             </label>
-                            <label style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #e2e8f0; font-weight: normal;">
-                                <input type="checkbox" name="sessions[]" value="main" style="margin-right: 0.5rem;"> 
+                            <label
+                                style="display: flex; align-items: center; margin-bottom: 0.5rem; color: #e2e8f0; font-weight: normal;">
+                                <input type="checkbox" name="sessions[]" value="main" style="margin-right: 0.5rem;">
                                 Main Workshop - October 16th-18th
                             </label>
                             <label style="display: flex; align-items: center; color: #e2e8f0; font-weight: normal;">
-                                <input type="checkbox" name="sessions[]" value="all" style="margin-right: 0.5rem;"> 
+                                <input type="checkbox" name="sessions[]" value="all" style="margin-right: 0.5rem;">
                                 All Sessions (Recommended)
                             </label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="motivation" class="form-label">Why do you want to join this quantum journey?</label>
-                        <textarea id="motivation" name="motivation" class="form-input" rows="4" placeholder="Tell us about your interest in quantum computing and what you hope to achieve..."></textarea>
+                        <textarea id="motivation" name="motivation" class="form-input" rows="4"
+                            placeholder="Tell us about your interest in quantum computing and what you hope to achieve..."></textarea>
                     </div>
                     <div class="form-group">
                         <label for="dietary" class="form-label">Dietary Requirements/Special Needs</label>
-                        <input type="text" id="dietary" name="dietary" class="form-input" placeholder="Any special accommodations needed?">
+                        <input type="text" id="dietary" name="dietary" class="form-input"
+                            placeholder="Any special accommodations needed?">
                     </div>
                     <button type="submit" class="form-button">🚀 Register for Quantum Journey</button>
                 </form>
-            </div>
+            </div> -->
         </section>
     </div>
 
@@ -1270,8 +1356,10 @@
                 <p class="contact-info">🌐 www.uniuyo.edu.ng | 🔬 Department of Physics & Computer Engineering</p>
             </div>
             <div style="margin: 2rem 0; padding: 1rem; background: rgba(255, 105, 180, 0.1); border-radius: 10px;">
-                <p style="color: #ff69b4; font-weight: bold;">🎉 Celebrating 100 Years of Quantum Mechanics (1924-2024) 🎉</p>
-                <p style="color: #e2e8f0; margin-top: 0.5rem;">From Max Planck to Quantum Computers - The Journey Continues at UniUyo</p>
+                <p style="color: #ff69b4; font-weight: bold;">🎉 Celebrating 100 Years of Quantum Mechanics (1924-2024)
+                    🎉</p>
+                <p style="color: #e2e8f0; margin-top: 0.5rem;">From Max Planck to Quantum Computers - The Journey
+                    Continues at UniUyo</p>
             </div>
             <p style="color: #a78bfa;">© 2025 Qiskit Fall Fest - University of Uyo. All rights reserved.</p>
             <p style="color: #6f42c1; font-size: 0.9rem; margin-top: 0.5rem;">
@@ -1299,7 +1387,7 @@
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.nav-link');
-            
+
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
@@ -1318,20 +1406,20 @@
         });
 
         // Registration form handling
-        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+        document.getElementById('registrationForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
-            
+
             // Check if at least one session is selected
             const sessions = document.querySelectorAll('input[name="sessions[]"]:checked');
             if (sessions.length === 0) {
                 alert('Please select at least one session you can attend.');
                 return;
             }
-            
+
             // Show success message with quantum flair
             const messages = [
                 '🎉 Quantum registration successful! Your quantum state has been entangled with our database.',
@@ -1340,9 +1428,9 @@
                 '🌟 Superposition collapsed! Your registration is now in a definite "CONFIRMED" state.'
             ];
             const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-            
+
             alert(randomMessage + '\n\nWe will send you detailed information about the pre-workshop classes and main workshop to your email address.');
-            
+
             // Reset form
             this.reset();
         });
@@ -1354,15 +1442,15 @@
             particle.style.left = Math.random() * 100 + '%';
             particle.style.top = Math.random() * 100 + '%';
             particle.style.animationDelay = Math.random() * 8 + 's';
-            
+
             // Random colors for particles
             const colors = ['#ff69b4', '#6f42c1', '#007bff'];
             const color = colors[Math.floor(Math.random() * colors.length)];
             particle.style.background = color;
             particle.style.boxShadow = `0 0 10px ${color}`;
-            
+
             document.querySelector('.quantum-particles').appendChild(particle);
-            
+
             setTimeout(() => {
                 if (particle.parentNode) {
                     particle.remove();
@@ -1387,7 +1475,7 @@
             universityLogo.style.transform = 'scale(1.1) rotate(5deg)';
             qiskitLogo.style.transform = 'scale(1.1) rotate(-5deg)';
             entanglementVisual.style.filter = 'brightness(1.5)';
-            
+
             setTimeout(() => {
                 universityLogo.style.transform = 'scale(1) rotate(0deg)';
                 qiskitLogo.style.transform = 'scale(1) rotate(0deg)';
@@ -1406,10 +1494,10 @@
             'KeyB', 'KeyA'
         ];
 
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             konamiCode.push(e.code);
             konamiCode = konamiCode.slice(-10);
-            
+
             if (konamiCode.join(',') === konamiSequence.join(',')) {
                 // Quantum surprise!
                 document.body.style.animation = 'rainbow-glow 2s ease-in-out 3';
@@ -1423,12 +1511,12 @@
             const now = new Date();
             const firstSession = new Date('2025-09-26T09:00:00');
             const timeDiff = firstSession - now;
-            
+
             if (timeDiff > 0) {
                 const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-                
+
                 const clockElement = document.createElement('div');
                 clockElement.style.cssText = `
                     position: fixed;
@@ -1448,11 +1536,11 @@
                     <div>${days}d ${hours}h ${minutes}m</div>
                     <div style="font-size: 0.8rem; opacity: 0.8;">until first session</div>
                 `;
-                
+
                 // Remove existing clock
                 const existingClock = document.getElementById('quantum-clock');
                 if (existingClock) existingClock.remove();
-                
+
                 clockElement.id = 'quantum-clock';
                 document.body.appendChild(clockElement);
             }
@@ -1463,7 +1551,5 @@
         setInterval(updateQuantumClock, 60000);
     </script>
 </body>
-</html>="#home" class="nav-link active">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href
+
+</html>
