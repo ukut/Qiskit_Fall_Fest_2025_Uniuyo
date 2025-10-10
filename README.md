@@ -1,1 +1,1 @@
-Draft Website(Work in Progress)
+Qiskit Fall Fest Website for University of Uyo.
